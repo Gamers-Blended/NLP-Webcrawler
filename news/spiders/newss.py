@@ -12,7 +12,7 @@ class NewssSpider(scrapy.Spider):
 
     # initialise webdriver object - modify path to chromedriver
     def __init__(self):
-        self.driver = webdriver.Chrome(r"C:\Users\user\Downloads\Coding_Test_Zhi_Hang\chromedriver.exe")
+        self.driver = webdriver.Chrome(<path to chromedriver\chromedriver.exe")
 
 
     def parse(self, response):
