@@ -1,0 +1,29 @@
+Task 1-------------------------------------------------------------------------------------------------------
+1. Open news/spiders/newss
+2. Modify line 15 for the correct browser and path to chromedriver.exe
+3. Save the file
+4. Open command prompt
+5. Change directory to this folder
+6. Run scrapy crawl newss -o "news.csv"
+7. Run python convert.py to generate txt files for every srcapped article
+8. Requested txt files are stored under the "output" folder
+
+Notes:
+- Although the program is able to click through all the "More Articles" buttons, 
+the crawler is unable to scrap the "un-hidden" article URLs.
+
+- Some articles cannot be converted into txt due to the "?" character its header.
+Although I used df['header'] = df['header'].replace('?', '', regex=False) in "convert.py"
+to remove it, the "?" character could not be removed.
+EG: "Remote-Controlled Labs? Strateos Raises $56 Million To Build Out Its Vision Of Scientific Automation"
+
+- Some articles could not be scraped (error 403) despite using a random USER_AGENT
+(defined in "utils.py" and "settings.py").
+EG: The World’s Richest Sports Team Owners 2021
+
+- The 'header' txt file is not an article.
+
+- Code for the crawler is in "news/spiders/newss.py".
+
+Task 2-------------------------------------------------------------------------------------------------------
+Refer to "Notebook_for_Task_2.ipynb" for the code and output for Task 2
